@@ -85,5 +85,43 @@
       "date": "2025-11-15",
       "body": "Learn to read basic elements of your Vedic birth chart. 3-hour workshop with live Q&A."
     }
+  ],
+  "horoscopes": [
+    {
+      "id": 1,
+      "period": "daily",
+      "title": "Daily Horoscope",
+      "titleTe": "రోజువారీ రాశిఫలం",
+      "date": "2025-11-18",
+      "content": "Today brings positive energy for new beginnings. The planetary alignment favors creative pursuits and social connections. Trust your intuition and take calculated risks in your endeavors.",
+      "contentTe": "ఈరోజు కొత్త ప్రారంభాలకు సానుకూల శక్తిని తెస్తుంది. గ్రహ అమరిక సృజనాత్మక ప్రయత్నాలు మరియు సామాజిక సంబంధాలకు అనుకూలంగా ఉంటుంది. మీ అంతర్దృష్టిని విశ్వసించండి మరియు మీ ప్రయత్నాలలో లెక్కించిన ప్రమాదాలను తీసుకోండి."
+    },
+    {
+      "id": 2,
+      "period": "weekly",
+      "title": "Weekly Horoscope",
+      "titleTe": "వారపు రాశిఫలం",
+      "date": "2025-11-18",
+      "content": "This week focuses on career advancement and financial stability. Mid-week brings opportunities for professional growth. Maintain balance between work and personal life. Weekend is ideal for family time and spiritual practices.",
+      "contentTe": "ఈ వారం కెరీర్ పురోగతి మరియు ఆర్థిక స్థిరత్వంపై దృష్టి పెడుతుంది. వారం మధ్యలో వృత్తిపరమైన ఎదుగుదలకు అవకాశాలు వస్తాయి. పని మరియు వ్యక్తిగత జీవితం మధ్య సమతుల్యతను కాపాడుకోండి. వారాంతం కుటుంబ సమయం మరియు ఆధ్యాత్మిక అభ్యాసాలకు అనువైనది."
+    },
+    {
+      "id": 3,
+      "period": "monthly",
+      "title": "Monthly Horoscope",
+      "titleTe": "నెలవారీ రాశిఫలం",
+      "date": "2025-11-01",
+      "content": "November promises significant transformations in your personal and professional spheres. The first half brings clarity in relationships, while the latter half focuses on material gains. Jupiter's transit brings wisdom and expansion in knowledge pursuits. Health requires attention mid-month.",
+      "contentTe": "నవంబర్ మీ వ్యక్తిగత మరియు వృత్తిపరమైన రంగాలలో ముఖ్యమైన పరివర్తనలను వాగ్దానం చేస్తుంది. మొదటి సగం సంబంధాలలో స్పష్టతను తెస్తుంది, రెండవ సగం భౌతిక లాభాలపై దృష్టి పెడుతుంది. గురు సంచారం జ్ఞానం మరియు విజ్ఞాన ప్రయత్నాలలో విస్తరణను తెస్తుంది. నెల మధ్యలో ఆరోగ్యం శ్రద్ధ అవసరం."
+    },
+    {
+      "id": 4,
+      "period": "yearly",
+      "title": "Yearly Horoscope 2025",
+      "titleTe": "సంవత్సరపు రాశిఫలం 2025",
+      "date": "2025-01-01",
+      "content": "2025 is a year of growth and transformation. Major planetary transits indicate career breakthroughs in the first quarter. Relationships deepen in spring. Financial gains peak during summer months. Spiritual awakening and personal development dominate the latter half. Focus on health and wellness throughout the year. Jupiter's blessing brings prosperity and wisdom.",
+      "contentTe": "2025 పెరుగుదల మరియు పరివర్తన సంవత్సరం. ప్రధాన గ్రహ సంచారాలు మొదటి త్రైమాసికంలో కెరీర్ పురోగతిని సూచిస్తాయి. వసంత ఋతువులో సంబంధాలు లోతుగా మారుతాయి. వేసవి నెలల్లో ఆర్థిక లాభాలు గరిష్ఠస్థాయికి చేరుకుంటాయి. ఆధ్యాత్మిక మేల్కొలుపు మరియు వ్యక్తిగత అభివృద్ధి రెండవ సగంలో ప్రధానంగా ఉంటాయి. ఏడాది అంతటా ఆరోగ్యం మరియు శ్రేయస్సుపై దృష్టి పెట్టండి. గురు ఆశీర్వాదం శ్రేయస్సు మరియు జ్ఞానాన్ని తెస్తుంది."
+    }
   ]
 }

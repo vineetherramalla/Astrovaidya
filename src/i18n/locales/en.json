@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "horoscope": "Horoscope",
+    "zodiac": "Zodiac Signs",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "title": "Welcome to Cosmic Insights",
+    "subtitle": "Expert Vedic Astrology Consultation & Guidance",
+    "description": "Unlock the mysteries of your destiny with personalized astrological insights from experienced Vedic astrologers.",
+    "cta": "Book Consultation",
+    "learn": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "popular": "Popular Services"
+  },
+  "horoscope": {
+    "title": "Your Horoscope",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "select": "Select Period"
+  },
+  "zodiac": {
+    "title": "Zodiac Signs",
+    "subtitle": "Discover insights about your zodiac sign",
+    "traits": "Key Traits",
+    "lucky": "Lucky Elements",
+    "compatibility": "Compatibility",
+    "back": "Back to Zodiac Signs"
+  },
+  "updates": {
+    "title": "Latest Updates",
+    "viewAll": "View All Updates"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Message Sent!",
+    "location": "Our Location"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "quickLinks": "Quick Links"
+  },
+  "whatsapp": {
+    "message": "Need help? Chat with us"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "services": "Manage Services",
+    "updates": "Manage Updates",
+    "horoscopes": "Manage Horoscopes",
+    "add": "Add New",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "export": "Export Data",
+    "import": "Import Data",
+    "reset": "Reset to Sample Data"
+  }
+}

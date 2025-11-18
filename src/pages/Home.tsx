@@ -4,6 +4,8 @@ import { initializeStorage } from '@/utils/localStorage';
 import Hero from '@/components/Hero';
 import MarqueeServices from '@/components/MarqueeServices';
 import ServicesGrid from '@/components/ServicesGrid';
+import Horoscopes from '@/components/Horoscopes';
+import ZodiacSigns from '@/components/ZodiacSigns';
 import UpdatesFeed from '@/components/UpdatesFeed';
 import ContactForm from '@/components/ContactForm';
 
@@ -18,6 +20,12 @@ const Home = () => {
       <Hero />
       <MarqueeServices />
       <ServicesGrid />
+      <div id="horoscope">
+        <Horoscopes />
+      </div>
+      <div id="zodiac">
+        <ZodiacSigns />
+      </div>
       <UpdatesFeed />
       <ContactForm />
     </main>

@@ -21,21 +21,29 @@ import {
   addUpdate,
   updateUpdate,
   deleteUpdate,
+  getHoroscopes,
+  addHoroscope,
+  updateHoroscope,
+  deleteHoroscope,
   exportData,
   importData,
   resetToSampleData,
 } from '@/utils/localStorage';
 import { Plus, Pencil, Trash2, Download, Upload, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { HoroscopeAdmin, HoroscopeDialog } from './HoroscopeAdmin';
 
 const AdminPanel = () => {
   const { toast } = useToast();
   const [services, setServices] = useState<any[]>([]);
   const [updates, setUpdates] = useState<any[]>([]);
+  const [horoscopes, setHoroscopes] = useState<any[]>([]);
   const [editingService, setEditingService] = useState<any>(null);
   const [editingUpdate, setEditingUpdate] = useState<any>(null);
+  const [editingHoroscope, setEditingHoroscope] = useState<any>(null);
   const [isServiceDialogOpen, setIsServiceDialogOpen] = useState(false);
   const [isUpdateDialogOpen, setIsUpdateDialogOpen] = useState(false);
+  const [isHoroscopeDialogOpen, setIsHoroscopeDialogOpen] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -44,6 +52,7 @@ const AdminPanel = () => {
   const loadData = () => {
     setServices(getServices());
     setUpdates(getUpdates());
+    setHoroscopes(getHoroscopes());
   };
 
   // Service Handlers

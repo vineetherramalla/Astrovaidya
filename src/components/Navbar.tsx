@@ -3,17 +3,21 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/#services' },
-    { name: 'Updates', path: '/#updates' },
-    { name: 'Contact', path: '/#contact' },
-    { name: 'Admin', path: '/admin' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.services'), path: '/#services' },
+    { name: t('nav.horoscope'), path: '/#horoscope' },
+    { name: t('nav.zodiac'), path: '/#zodiac' },
+    { name: t('nav.contact'), path: '/#contact' },
+    { name: t('nav.admin'), path: '/admin' },
   ];
 
   const isActive = (path: string) => {
@@ -55,12 +59,13 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <LanguageSwitcher />
             <Button
               asChild
               size="sm"
               className="bg-astrology-teal hover:bg-astrology-deep-teal text-white"
             >
-              <a href="mailto:hello@cosmicinsights.com">Book Consultation</a>
+              <a href="mailto:hello@cosmicinsights.com">{t('hero.cta')}</a>
             </Button>
           </div>
 
@@ -91,12 +96,16 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Language:</span>
+                <LanguageSwitcher />
+              </div>
               <Button
                 asChild
                 size="sm"
                 className="bg-astrology-teal hover:bg-astrology-deep-teal text-white w-full"
               >
-                <a href="mailto:hello@cosmicinsights.com">Book Consultation</a>
+                <a href="mailto:hello@cosmicinsights.com">{t('hero.cta')}</a>
               </Button>
             </div>
           </div>
