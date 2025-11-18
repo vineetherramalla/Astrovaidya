@@ -1,0 +1,89 @@
+{
+  "site": {
+    "brand": "Cosmic Insights",
+    "phone": "+91-9876543210",
+    "email": "hello@cosmicinsights.com"
+  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Personal Horoscope",
+      "slug": "personal-horoscope",
+      "tagline": "Detailed birth chart reading",
+      "icon": "Star",
+      "description": "Get comprehensive insights into your life through detailed Vedic birth chart analysis. Understand your strengths, challenges, and destiny path.",
+      "price": "₹2,500",
+      "duration": "60 min"
+    },
+    {
+      "id": 2,
+      "title": "Marriage Matching",
+      "slug": "marriage-matching",
+      "tagline": "Kundali matching and advice",
+      "icon": "Heart",
+      "description": "Traditional Kundali Milan service for marriage compatibility analysis. Comprehensive matching of Guna, Mangal Dosha, and planetary positions.",
+      "price": "₹3,500",
+      "duration": "90 min"
+    },
+    {
+      "id": 3,
+      "title": "Career Guidance",
+      "slug": "career-guidance",
+      "tagline": "Vedic astrological insights",
+      "icon": "Briefcase",
+      "description": "Discover your ideal career path based on planetary positions and dashas. Get timing for job changes and business ventures.",
+      "price": "₹2,000",
+      "duration": "45 min"
+    },
+    {
+      "id": 4,
+      "title": "Vastu Consultation",
+      "slug": "vastu-consultation",
+      "tagline": "Harmonize your living space",
+      "icon": "Home",
+      "description": "Expert Vastu Shastra consultation for homes and offices. Balance energies and create prosperity through proper spatial arrangement.",
+      "price": "₹4,000",
+      "duration": "90 min"
+    },
+    {
+      "id": 5,
+      "title": "Gemstone Recommendation",
+      "slug": "gemstone-recommendation",
+      "tagline": "Strengthen planetary influence",
+      "icon": "Gem",
+      "description": "Personalized gemstone recommendations based on your birth chart. Enhance positive energies and mitigate negative influences.",
+      "price": "₹1,500",
+      "duration": "30 min"
+    },
+    {
+      "id": 6,
+      "title": "Yearly Prediction",
+      "slug": "yearly-prediction",
+      "tagline": "Annual forecast and guidance",
+      "icon": "Calendar",
+      "description": "Comprehensive yearly horoscope with monthly predictions. Plan your year with insights into health, wealth, and relationships.",
+      "price": "₹5,000",
+      "duration": "120 min"
+    }
+  ],
+  "updates": [
+    {
+      "id": 1,
+      "title": "Diwali Special Offer",
+      "date": "2025-11-01",
+      "body": "Get 20% off on all yearly consultation packages. Limited time offer valid until Diwali."
+    },
+    {
+      "id": 2,
+      "title": "New Moon Meditation Session",
+      "date": "2025-11-10",
+      "body": "Join our special New Moon meditation and intention-setting session. Free for existing clients."
+    },
+    {
+      "id": 3,
+      "title": "Workshop: Understanding Your Birth Chart",
+      "date": "2025-11-15",
+      "body": "Learn to read basic elements of your Vedic birth chart. 3-hour workshop with live Q&A."
+    }
+  ]
+}
