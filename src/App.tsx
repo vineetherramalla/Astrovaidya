@@ -6,10 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
+import ZodiacPage from "./pages/ZodiacPage";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import './i18n/config';
 
 const queryClient = new QueryClient();
 
@@ -26,12 +29,14 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServicePage />} />
+              <Route path="/zodiac/:sign" element={<ZodiacPage />} />
               <Route path="/admin" element={<Admin />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
           <Footer />
+          <WhatsAppButton />
         </div>
       </BrowserRouter>
     </TooltipProvider>
