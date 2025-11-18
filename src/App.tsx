@@ -13,6 +13,7 @@ import ZodiacPage from "./pages/ZodiacPage";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import './i18n/config';
+import MarqueeServices from "./components/MarqueeServices";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
           <TopBar />
+          <MarqueeServices />
           <Navbar />
           <div className="flex-1 pt-26">
             <Routes>
