@@ -25,9 +25,9 @@ const App = () => (
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
           <TopBar />
-          <MarqueeServices />
           <Navbar />
-          <div className="flex-1 pt-26">
+          <MarqueeServices />
+          <div className="flex-1 pt-[120px]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServicePage />} />
