@@ -1,5 +1,6 @@
 // Admin page with simple client-side authentication
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import AdminPanel from '@/components/AdminPanel';
 const ADMIN_PIN = '1234';
 
 const Admin = () => {
+  const { t } = useTranslation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
@@ -30,7 +32,7 @@ const Admin = () => {
       sessionStorage.setItem('admin_auth', 'true');
       setError('');
     } else {
-      setError('Incorrect PIN. Please try again.');
+      setError(t('admin.incorrectPIN'));
       setPin('');
     }
   };
@@ -51,31 +53,29 @@ const Admin = () => {
                 <Lock className="w-8 h-8 text-astrology-teal" />
               </div>
             </div>
-            <CardTitle className="text-center text-2xl">Admin Access</CardTitle>
+            <CardTitle className="text-center text-2xl">{t('admin.accessTitle')}</CardTitle>
             <CardDescription className="text-center">
-              Enter the PIN to access the admin panel
+              {t('admin.accessSubtitle')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Alert className="mb-6 bg-yellow-50 border-yellow-200">
               <AlertDescription className="text-sm">
-                <strong>⚠️ Security Notice:</strong> This is a client-side authentication for demonstration purposes only. 
-                It is NOT secure for production use. For production, implement proper server-side authentication 
-                with encrypted credentials and session management.
+                <strong>⚠️ {t('admin.securityNotice')}</strong> {t('admin.securityText')}
               </AlertDescription>
             </Alert>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="pin" className="text-sm font-medium mb-2 block">
-                  Admin PIN
+                  {t('admin.adminPIN')}
                 </label>
                 <Input
                   id="pin"
                   type="password"
                   value={pin}
                   onChange={(e) => setPin(e.target.value)}
-                  placeholder="Enter PIN"
+                  placeholder={t('admin.enterPIN')}
                   maxLength={4}
                   autoComplete="off"
                   className="text-center text-2xl tracking-widest"
@@ -86,13 +86,13 @@ const Admin = () => {
               </div>
               <Button type="submit" className="w-full" size="lg">
                 <Unlock className="w-4 h-4 mr-2" />
-                Access Admin Panel
+                {t('admin.accessPanel')}
               </Button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-xs text-muted-foreground">
-                Demo PIN: <code className="bg-muted px-2 py-1 rounded">1234</code>
+                {t('admin.demoPin')} <code className="bg-muted px-2 py-1 rounded">1234</code>
               </p>
             </div>
           </CardContent>
@@ -106,22 +106,20 @@ const Admin = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Admin Panel</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">{t('admin.title')}</h1>
             <p className="text-muted-foreground">
-              Manage services, updates, and site data
+              {t('admin.subtitle')}
             </p>
           </div>
           <Button onClick={handleLogout} variant="outline">
             <Lock className="w-4 h-4 mr-2" />
-            Logout
+            {t('admin.logout')}
           </Button>
         </div>
 
         <Alert className="mb-6 bg-blue-50 border-blue-200">
           <AlertDescription>
-            <strong>ℹ️ Data Storage:</strong> All data is stored in your browser's localStorage. 
-            Changes persist across sessions but are limited to this browser. Use the export feature 
-            to backup your data, and import to restore or transfer to another browser.
+            <strong>ℹ️ {t('admin.dataStorage')}</strong> {t('admin.dataStorageText')} <code className="bg-muted px-1 rounded">src/data/services.ts</code> {t('admin.andText')} <code className="bg-muted px-1 rounded">src/data/horoscopes.ts</code>.
           </AlertDescription>
         </Alert>
 

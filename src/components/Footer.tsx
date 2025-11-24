@@ -1,15 +1,17 @@
 // Footer component with links and social icons
 import { Facebook, Instagram, Twitter, Youtube, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/#services' },
-    { name: 'Updates', path: '/#updates' },
-    { name: 'Contact', path: '/#contact' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.services'), path: '/#services' },
+    { name: t('updates.title'), path: '/#updates' },
+    { name: t('nav.contact'), path: '/#contact' },
   ];
 
   const socialLinks = [
@@ -27,11 +29,10 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4 group">
               <Sparkles className="w-6 h-6 text-astrology-orange" />
-              <span className="text-xl font-bold text-white">Cosmic Insights</span>
+              <span className="text-xl font-bold text-white">{t('footer.brand')}</span>
             </Link>
             <p className="text-astrology-sand/80 text-sm leading-relaxed mb-4">
-              Professional Vedic astrology services providing accurate horoscope readings, 
-              marriage matching, and personalized guidance for life's important decisions.
+              {t('footer.description')}
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -49,7 +50,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
@@ -66,10 +67,10 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.contactUs')}</h3>
             <div className="space-y-2 text-sm">
               <p className="text-astrology-sand/80">
-                <strong className="text-white">Email:</strong>{' '}
+                <strong className="text-white">{t('footer.email')}</strong>{' '}
                 <a
                   href="mailto:hello@cosmicinsights.com"
                   className="hover:text-astrology-orange transition-colors"
@@ -78,7 +79,7 @@ const Footer = () => {
                 </a>
               </p>
               <p className="text-astrology-sand/80">
-                <strong className="text-white">Phone:</strong>{' '}
+                <strong className="text-white">{t('footer.phone')}</strong>{' '}
                 <a
                   href="tel:+919876543210"
                   className="hover:text-astrology-orange transition-colors"
@@ -87,7 +88,7 @@ const Footer = () => {
                 </a>
               </p>
               <p className="text-astrology-sand/80">
-                <strong className="text-white">Location:</strong> New Delhi, India
+                <strong className="text-white">{t('footer.location')}</strong> {t('footer.locationValue')}
               </p>
             </div>
           </div>
@@ -95,13 +96,13 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-astrology-sand/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-astrology-sand/70">
-            <p>© {currentYear} Cosmic Insights. All rights reserved.</p>
+            <p>© {currentYear} {t('footer.brand')}. {t('footer.rights')}</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-astrology-orange transition-colors">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </a>
               <a href="#" className="hover:text-astrology-orange transition-colors">
-                Terms of Service
+                {t('footer.termsOfService')}
               </a>
             </div>
           </div>

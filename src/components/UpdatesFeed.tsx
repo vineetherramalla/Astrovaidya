@@ -1,10 +1,12 @@
 // Latest updates feed component
 import { useState, useEffect } from 'react';
 import { getUpdates } from '@/utils/localStorage';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Calendar } from 'lucide-react';
 
 const UpdatesFeed = () => {
+  const { t, i18n } = useTranslation();
   const [updates, setUpdates] = useState<any[]>([]);
 
   useEffect(() => {
@@ -13,7 +15,8 @@ const UpdatesFeed = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-IN', {
+    const locale = i18n.language === 'te' ? 'te-IN' : 'en-IN';
+    return date.toLocaleDateString(locale, {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -25,10 +28,10 @@ const UpdatesFeed = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-            Latest Updates
+            {t('updates.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Stay informed about special offers, workshops, and astrological events
+            {t('updates.subtitle')}
           </p>
         </div>
 
@@ -36,7 +39,7 @@ const UpdatesFeed = () => {
           {updates.length === 0 ? (
             <Card>
               <CardContent className="py-12 text-center">
-                <p className="text-muted-foreground">No updates available at the moment.</p>
+                <p className="text-muted-foreground">{t('updates.noUpdates')}</p>
               </CardContent>
             </Card>
           ) : (

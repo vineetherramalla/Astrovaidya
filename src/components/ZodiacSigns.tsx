@@ -27,7 +27,13 @@ const ZodiacSigns = () => {
               onClick={() => navigate(`/zodiac/${sign.id}`)}
             >
               <CardHeader className="text-center">
-                <div className="text-6xl mb-2">{sign.symbol}</div>
+                <div className="mb-2">
+                  {sign.image ? (
+                    <img src={sign.image} alt={sign.name} className="w-20 h-20 mx-auto object-contain" />
+                  ) : (
+                    <div className="text-6xl">{sign.symbol}</div>
+                  )}
+                </div>
                 <CardTitle className="text-lg">
                   {isTeluguMode ? sign.nameTe : sign.name}
                 </CardTitle>

@@ -8,6 +8,7 @@ import {
 } from './ui/dialog';
 import { Button } from './ui/button';
 import { getIcon } from '@/utils/iconMap';
+import { useTranslation } from 'react-i18next';
 import { Clock, IndianRupee, Mail } from 'lucide-react';
 
 interface ServiceModalProps {
@@ -17,6 +18,8 @@ interface ServiceModalProps {
 }
 
 const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
+  const { t } = useTranslation();
+  
   if (!service) return null;
 
   const Icon = getIcon(service.icon);
@@ -32,11 +35,9 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        
         <DialogHeader>
           <div className="flex items-start gap-4 mb-4">
-            <div className="p-4 bg-astrology-teal/10 rounded-lg">
-              <Icon className="w-10 h-10 text-astrology-teal" />
-            </div>
             <div className="flex-1">
               <DialogTitle className="text-2xl md:text-3xl mb-2">
                 {service.title}
@@ -47,6 +48,16 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
             </div>
           </div>
         </DialogHeader>
+
+        <div className="p-0 bg-transparent rounded-lg">
+              {service.image ? (
+                <img src={service.image} alt={service.title} className="w-86 h-66 rounded-md object-cover" />
+              ) : (
+                <div className="p-4 bg-astrology-teal/10 rounded-lg">
+                  <Icon className="w-10 h-10 text-astrology-teal" />
+                </div>
+              )}
+            </div>
 
         <div className="space-y-6">
           {/* Service Details */}
@@ -68,30 +79,30 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
           {/* Description */}
           {service.description && (
             <div>
-              <h3 className="text-lg font-semibold mb-2">About This Service</h3>
+              <h3 className="text-lg font-semibold mb-2">{t('services.aboutService')}</h3>
               <p className="text-muted-foreground leading-relaxed">{service.description}</p>
             </div>
           )}
 
           {/* What's Included */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">What's Included</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('services.whatsIncluded')}</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-astrology-teal mt-1">✓</span>
-                <span>Detailed analysis and consultation</span>
+                <span>{t('services.included1')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-astrology-teal mt-1">✓</span>
-                <span>Written report with insights and recommendations</span>
+                <span>{t('services.included2')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-astrology-teal mt-1">✓</span>
-                <span>Follow-up support via email</span>
+                <span>{t('services.included3')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-astrology-teal mt-1">✓</span>
-                <span>Remedial measures and guidance</span>
+                <span>{t('services.included4')}</span>
               </li>
             </ul>
           </div>
@@ -104,10 +115,10 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
               onClick={handleBooking}
             >
               <Mail className="w-4 h-4 mr-2" />
-              Book This Service
+              {t('services.bookService')}
             </Button>
-            <Button variant="outline" size="lg" onClick={onClose}>
-              Close
+            <Button variant="outline" className = "bg-astrology-orange text-white hover:bg-astrology-orange/90"  size="lg" onClick={onClose}>
+              {t('services.close')}
             </Button>
           </div>
         </div>

@@ -3,6 +3,7 @@ export interface ZodiacSign {
   name: string;
   nameTe: string;
   symbol: string;
+  image?: string;
   dateRange: string;
   dateRangeTe: string;
   element: string;
@@ -26,6 +27,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Aries',
     nameTe: 'మేషం',
     symbol: '♈',
+    image: '',
     dateRange: 'March 21 - April 19',
     dateRangeTe: 'మార్చి 21 - ఏప్రిల్ 19',
     element: 'Fire',
@@ -47,6 +49,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Taurus',
     nameTe: 'వృషభం',
     symbol: '♉',
+    image: '',
     dateRange: 'April 20 - May 20',
     dateRangeTe: 'ఏప్రిల్ 20 - మే 20',
     element: 'Earth',
@@ -68,6 +71,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Gemini',
     nameTe: 'మిథునం',
     symbol: '♊',
+    image: '',
     dateRange: 'May 21 - June 20',
     dateRangeTe: 'మే 21 - జూన్ 20',
     element: 'Air',
@@ -89,6 +93,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Cancer',
     nameTe: 'కర్కాటకం',
     symbol: '♋',
+    image: '',
     dateRange: 'June 21 - July 22',
     dateRangeTe: 'జూన్ 21 - జూలై 22',
     element: 'Water',
@@ -110,6 +115,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Leo',
     nameTe: 'సింహం',
     symbol: '♌',
+    image: '',
     dateRange: 'July 23 - August 22',
     dateRangeTe: 'జూలై 23 - ఆగస్టు 22',
     element: 'Fire',
@@ -131,6 +137,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Virgo',
     nameTe: 'కన్య',
     symbol: '♍',
+    image: '',
     dateRange: 'August 23 - September 22',
     dateRangeTe: 'ఆగస్టు 23 - సెప్టెంబర్ 22',
     element: 'Earth',
@@ -152,6 +159,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Libra',
     nameTe: 'తుల',
     symbol: '♎',
+    image: '',
     dateRange: 'September 23 - October 22',
     dateRangeTe: 'సెప్టెంబర్ 23 - అక్టోబర్ 22',
     element: 'Air',
@@ -173,6 +181,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Scorpio',
     nameTe: 'వృశ్చికం',
     symbol: '♏',
+    image: '',
     dateRange: 'October 23 - November 21',
     dateRangeTe: 'అక్టోబర్ 23 - నవంబర్ 21',
     element: 'Water',
@@ -194,6 +203,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Sagittarius',
     nameTe: 'ధనస్సు',
     symbol: '♐',
+    image: '',
     dateRange: 'November 22 - December 21',
     dateRangeTe: 'నవంబర్ 22 - డిసెంబర్ 21',
     element: 'Fire',
@@ -215,6 +225,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Capricorn',
     nameTe: 'మకరం',
     symbol: '♑',
+    image: '',
     dateRange: 'December 22 - January 19',
     dateRangeTe: 'డిసెంబర్ 22 - జనవరి 19',
     element: 'Earth',
@@ -236,6 +247,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Aquarius',
     nameTe: 'కుంభం',
     symbol: '♒',
+    image: '',
     dateRange: 'January 20 - February 18',
     dateRangeTe: 'జనవరి 20 - ఫిబ్రవరి 18',
     element: 'Air',
@@ -257,6 +269,7 @@ export const zodiacSigns: ZodiacSign[] = [
     name: 'Pisces',
     nameTe: 'మీనం',
     symbol: '♓',
+    image: '',
     dateRange: 'February 19 - March 20',
     dateRangeTe: 'ఫిబ్రవరి 19 - మార్చి 20',
     element: 'Water',

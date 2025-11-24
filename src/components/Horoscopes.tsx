@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getHoroscopes } from '@/utils/localStorage';
+import { getHoroscopeByPeriod } from '@/data/horoscopes';
+import type { Horoscope } from '@/data/horoscopes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -9,10 +10,9 @@ type HoroscopePeriod = 'daily' | 'weekly' | 'monthly' | 'yearly';
 const Horoscopes = () => {
   const { t, i18n } = useTranslation();
   const [period, setPeriod] = useState<HoroscopePeriod>('daily');
-  const horoscopes = getHoroscopes();
   const isTeluguMode = i18n.language === 'te';
 
-  const currentHoroscope = horoscopes.find((h: any) => h.period === period);
+  const currentHoroscope: Horoscope | undefined = getHoroscopeByPeriod(period);
 
   return (
     <section className="py-16 px-4 bg-muted/30">
@@ -38,11 +38,13 @@ const Horoscopes = () => {
                   <CardTitle>
                     {isTeluguMode ? currentHoroscope.titleTe : currentHoroscope.title}
                   </CardTitle>
-                  <CardDescription>
-                    {new Date(currentHoroscope.date).toLocaleDateString(isTeluguMode ? 'te-IN' : 'en-IN')}
-                  </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
+                  <img 
+                    src={currentHoroscope.image} 
+                    alt={isTeluguMode ? currentHoroscope.titleTe : currentHoroscope.title}
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
                   <p className="text-foreground leading-relaxed whitespace-pre-line">
                     {isTeluguMode ? currentHoroscope.contentTe : currentHoroscope.content}
                   </p>
@@ -51,7 +53,7 @@ const Horoscopes = () => {
             ) : (
               <Card>
                 <CardContent className="py-12 text-center text-muted-foreground">
-                  No horoscope available for this period. Please check admin panel.
+                  {t('horoscope.noData')}
                 </CardContent>
               </Card>
             )}

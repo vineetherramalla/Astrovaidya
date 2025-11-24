@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <Sparkles className="w-6 h-6 text-astrology-orange group-hover:text-astrology-teal transition-colors" />
-            <span className="text-xl font-bold text-primary">Cosmic Insights</span>
+            <span className="text-xl font-bold text-primary">{t('footer.brand')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Language:</span>
+                <span className="text-sm text-muted-foreground">{t('nav.language')}</span>
                 <LanguageSwitcher />
               </div>
               <Button
@@ -105,7 +105,7 @@ const Navbar = () => {
                 size="sm"
                 className="bg-astrology-teal hover:bg-astrology-deep-teal text-white w-full"
               >
-                <a href="mailto:hello@cosmicinsights.com">{t('hero.cta')}</a>
+                <a href="https://wa.me/919515615597?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener noreferrer">{t('hero.cta')}</a>
               </Button>
             </div>
           </div>

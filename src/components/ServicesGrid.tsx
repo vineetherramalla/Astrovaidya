@@ -1,17 +1,20 @@
 // Grid of service cards with modal/expand functionality
 import { useState, useEffect } from 'react';
-import { getServices } from '@/utils/localStorage';
+import { getAllServices } from '@/data/services';
+import type { Service } from '@/data/services';
 import { getIcon } from '@/utils/iconMap';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import ServiceModal from './ServiceModal';
 import { Clock, IndianRupee } from 'lucide-react';
 
 const ServicesGrid = () => {
-  const [services, setServices] = useState<any[]>([]);
-  const [selectedService, setSelectedService] = useState<any>(null);
+  const { t } = useTranslation();
+  const [services, setServices] = useState<Service[]>([]);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   useEffect(() => {
-    setServices(getServices());
+    setServices(getAllServices());
   }, []);
 
   return (
@@ -19,10 +22,10 @@ const ServicesGrid = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive Vedic astrology services tailored to your unique needs
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -45,9 +48,15 @@ const ServicesGrid = () => {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
-                    <div className="p-3 bg-astrology-teal/10 rounded-lg group-hover:bg-astrology-teal/20 transition-colors">
-                      <Icon className="w-8 h-8 text-astrology-teal" />
-                    </div>
+                    <div className="p-0 bg-transparent rounded-lg group-hover:bg-transparent transition-colors">
+                        {service.image ? (
+                          <img src={service.image} alt={service.title} className="w-42 h-32 rounded-md object-cover" />
+                        ) : (
+                          <div className="p-3 bg-astrology-teal/10 rounded-lg group-hover:bg-astrology-teal/20 transition-colors">
+                            <Icon className="w-8 h-8 text-astrology-teal" />
+                          </div>
+                        )}
+                      </div>
                     {service.price && (
                       <div className="flex items-center gap-1 text-astrology-orange font-bold">
                         <IndianRupee className="w-4 h-4" />

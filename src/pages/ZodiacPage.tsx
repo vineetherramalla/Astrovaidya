@@ -16,8 +16,8 @@ const ZodiacPage = () => {
   if (!zodiacSign) {
     return (
       <div className="container mx-auto py-16 px-4 text-center">
-        <h1 className="text-2xl font-bold mb-4">Zodiac sign not found</h1>
-        <Button onClick={() => navigate('/')}>Go Back</Button>
+        <h1 className="text-2xl font-bold mb-4">{t('zodiac.notFound')}</h1>
+        <Button onClick={() => navigate('/')}>{t('zodiac.goBack')}</Button>
       </div>
     );
   }
@@ -47,7 +47,7 @@ const ZodiacPage = () => {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>
-              {isTeluguMode ? 'వివరణ' : 'Description'}
+              {t('zodiac.description')}
             </CardTitle>
           </CardHeader>
           <CardContent>

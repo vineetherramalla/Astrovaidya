@@ -2,8 +2,10 @@
 import { Phone, Mail } from 'lucide-react';
 import { getSiteInfo } from '@/utils/localStorage';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TopBar = () => {
+  const { t } = useTranslation();
   const [siteInfo, setSiteInfo] = useState({ phone: '', email: '' });
 
   useEffect(() => {
@@ -11,8 +13,8 @@ const TopBar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-astrology-brown text-astrology-sand py-2 px-4">
-      <div className="container mx-auto flex flex-wrap justify-between items-center text-sm gap-2">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-astrology-brown text-astrology-sand h-10 px-4">
+      <div className="container mx-auto flex flex-wrap justify-between items-center text-sm gap-2 h-full">
         <div className="flex items-center gap-4">
           <a
             href={`tel:${siteInfo.phone}`}
@@ -32,7 +34,7 @@ const TopBar = () => {
           </a>
         </div>
         <div className="flex items-center gap-2 text-xs">
-          <span className="text-astrology-sand/80">Professional Vedic Astrology Services</span>
+          <span className="text-astrology-sand/80">{t('topBar.tagline')}</span>
         </div>
       </div>
     </div>

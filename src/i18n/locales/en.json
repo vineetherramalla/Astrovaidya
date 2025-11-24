@@ -7,18 +7,37 @@
     "about": "About",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "admin": "Admin"
+    "admin": "Admin",
+    "language": "Language:"
   },
   "hero": {
-    "title": "Welcome to Cosmic Insights",
-    "subtitle": "Expert Vedic Astrology Consultation & Guidance",
-    "description": "Unlock the mysteries of your destiny with personalized astrological insights from experienced Vedic astrologers.",
+    "title": "Illuminate Your Path with",
+    "titleHighlight": "Cosmic Wisdom",
+    "subtitle": "Vedic Astrology Services",
+    "description": "Discover personalized insights through ancient Vedic astrology. Get expert guidance for life's most important decisions with accurate birth chart readings and consultations.",
     "cta": "Book Consultation",
-    "learn": "Learn More"
+    "explore": "Explore Services",
+    "yearsExperience": "Years Experience",
+    "happyClients": "Happy Clients",
+    "satisfactionRate": "Satisfaction Rate"
   },
   "services": {
     "title": "Our Services",
-    "popular": "Popular Services"
+    "subtitle": "Comprehensive Vedic astrology services tailored to your unique needs",
+    "popular": "Popular Services",
+    "aboutService": "About This Service",
+    "whatsIncluded": "What's Included",
+    "bookService": "Book This Service",
+    "contactUs": "Contact Us",
+    "close": "Close",
+    "included1": "Detailed analysis and personalized consultation",
+    "included2": "Comprehensive written report with insights",
+    "included3": "Follow-up support via email",
+    "included4": "Remedial measures and practical guidance",
+    "included5": "Confidential and professional service",
+    "notFound": "Service Not Found",
+    "returnHome": "Return Home",
+    "backHome": "Back to Home"
   },
   "horoscope": {
     "title": "Your Horoscope",
@@ -26,7 +45,8 @@
     "weekly": "Weekly",
     "monthly": "Monthly",
     "yearly": "Yearly",
-    "select": "Select Period"
+    "select": "Select Period",
+    "noData": "No horoscope available for this period. Please check admin panel."
   },
   "zodiac": {
     "title": "Zodiac Signs",
@@ -34,40 +54,122 @@
     "traits": "Key Traits",
     "lucky": "Lucky Elements",
     "compatibility": "Compatibility",
-    "back": "Back to Zodiac Signs"
+    "description": "Description",
+    "back": "Back to Zodiac Signs",
+    "notFound": "Zodiac sign not found",
+    "goBack": "Go Back"
   },
   "updates": {
     "title": "Latest Updates",
-    "viewAll": "View All Updates"
+    "subtitle": "Stay informed about special offers, workshops, and astrological events",
+    "viewAll": "View All Updates",
+    "noUpdates": "No updates available at the moment."
   },
   "contact": {
-    "title": "Get in Touch",
-    "name": "Your Name",
-    "email": "Email Address",
-    "message": "Your Message",
+    "title": "Get In Touch",
+    "subtitle": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "name": "Name *",
+    "namePlaceholder": "Your name",
+    "email": "Email *",
+    "emailPlaceholder": "your.email@example.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+91-XXXXXXXXXX",
+    "message": "Message *",
+    "messagePlaceholder": "Tell us about your inquiry...",
     "send": "Send Message",
     "success": "Message Sent!",
-    "location": "Our Location"
+    "location": "Our Location",
+    "contactInfo": "Contact Information",
+    "contactSubtitle": "Reach out to us through any of these channels",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "locationValue": "Hyderabad, India",
+    "sendMessage": "Send Us a Message",
+    "note": "Note:",
+    "noteText": "This is a client-side contact form. When you submit, your default email application will open with the message pre-filled. You can also directly email us at the address above.",
+    "openingEmail": "Opening Email Client",
+    "openingEmailDesc": "Your default email application should open shortly.",
+    "emailCopied": "Email Copied!",
+    "emailCopiedDesc": "Email address copied to clipboard"
   },
   "footer": {
+    "brand": "Cosmic Insights",
+    "description": "Professional Vedic astrology services providing accurate horoscope readings, marriage matching, and personalized guidance for life's important decisions.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "email": "Email:",
+    "phone": "Phone:",
+    "location": "Location:",
+    "locationValue": "New Delhi, India",
     "rights": "All rights reserved.",
-    "quickLinks": "Quick Links"
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "topBar": {
+    "tagline": "Professional Vedic Astrology Services"
   },
   "whatsapp": {
-    "message": "Need help?"
+    "message": "Need help? Chat with us"
   },
   "admin": {
     "title": "Admin Panel",
+    "subtitle": "Manage services, updates, and site data",
     "services": "Manage Services",
     "updates": "Manage Updates",
     "horoscopes": "Manage Horoscopes",
     "add": "Add New",
+    "addUpdate": "Add Update",
     "edit": "Edit",
     "delete": "Delete",
     "save": "Save",
     "cancel": "Cancel",
     "export": "Export Data",
     "import": "Import Data",
-    "reset": "Reset to Sample Data"
+    "reset": "Reset to Sample Data",
+    "dataManagement": "Data Management",
+    "dataManagementDesc": "Export, import, or reset your data. All changes are stored in browser localStorage. Note: Services and horoscopes are stored in code and cannot be edited from admin panel.",
+    "exportJSON": "Export JSON",
+    "importJSON": "Import JSON",
+    "noteTitle": "Note:",
+    "noteText": "This admin panel is client-side only. Data is stored in localStorage and not secure for production use. For a production site, implement server-side authentication and database storage. Services and horoscopes are stored in code at",
+    "andText": "and",
+    "mustBeEdited": "and must be edited directly in the code.",
+    "manageUpdates": "Manage Updates",
+    "manageUpdatesDesc": "Add, edit, or delete news and announcements. Services are managed in code.",
+    "titleLabel": "Title *",
+    "dateLabel": "Date *",
+    "bodyLabel": "Body *",
+    "editUpdate": "Edit Update",
+    "addNewUpdate": "Add New Update",
+    "updateDetails": "Update the details below",
+    "postUpdate": "Post a new update or announcement",
+    "postUpdateBtn": "Post Update",
+    "updateBtn": "Update",
+    "dataStorage": "Data Storage:",
+    "dataStorageText": "Updates are stored in your browser's localStorage. Changes persist across sessions but are limited to this browser. Use the export feature to backup your data, and import to restore or transfer to another browser. Services and horoscopes are stored in code at",
+    "accessTitle": "Admin Access",
+    "accessSubtitle": "Enter the PIN to access the admin panel",
+    "securityNotice": "Security Notice:",
+    "securityText": "This is a client-side authentication for demonstration purposes only. It is NOT secure for production use. For production, implement proper server-side authentication with encrypted credentials and session management.",
+    "adminPIN": "Admin PIN",
+    "enterPIN": "Enter PIN",
+    "accessPanel": "Access Admin Panel",
+    "demoPin": "Demo PIN:",
+    "logout": "Logout",
+    "incorrectPIN": "Incorrect PIN. Please try again."
+  },
+  "about": {
+    "title": "About Our Astrology Services",
+    "description1": "Welcome to Cosmic Insights, your trusted destination for authentic Vedic astrology services. With over 15 years of experience, our expert astrologers provide personalized guidance to help you navigate life's challenges and opportunities.",
+    "description2": "We specialize in birth chart analysis, marriage matching, career guidance, and personalized horoscope readings. Our approach combines traditional Vedic wisdom with modern understanding to deliver accurate and actionable insights.",
+    "servicesDelivered": "Services Delivered",
+    "expertTitle": "Expert Vedic Astrologer",
+    "expertSubtitle": "Certified & Experienced Professional"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
   }
 }

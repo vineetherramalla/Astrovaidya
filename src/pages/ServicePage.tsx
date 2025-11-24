@@ -1,29 +1,33 @@
 // Individual service detail page (route: /services/:slug)
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getServices } from '@/utils/localStorage';
+import { getServiceBySlug } from '@/data/services';
+import type { Service } from '@/data/services';
 import { getIcon } from '@/utils/iconMap';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, IndianRupee, Mail, ArrowLeft } from 'lucide-react';
 
 const ServicePage = () => {
+  const { t } = useTranslation();
   const { slug } = useParams();
-  const [service, setService] = useState<any>(null);
+  const [service, setService] = useState<Service | null>(null);
 
   useEffect(() => {
-    const services = getServices();
-    const found = services.find((s: any) => s.slug === slug);
-    setService(found);
+    if (slug) {
+      const found = getServiceBySlug(slug);
+      setService(found || null);
+    }
   }, [slug]);
 
   if (!service) {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Service Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4">{t('services.notFound')}</h1>
           <Button asChild>
-            <Link to="/">Return Home</Link>
+            <Link to="/">{t('services.returnHome')}</Link>
           </Button>
         </div>
       </main>
@@ -46,7 +50,7 @@ const ServicePage = () => {
         <Button asChild variant="ghost" className="mb-8">
           <Link to="/">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t('services.backHome')}
           </Link>
         </Button>
 
@@ -78,7 +82,7 @@ const ServicePage = () => {
 
           <Card className="mb-8">
             <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">About This Service</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('services.aboutService')}</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 {service.description || service.tagline}
               </p>
@@ -87,27 +91,27 @@ const ServicePage = () => {
 
           <Card className="mb-8">
             <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">What's Included</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('services.whatsIncluded')}</h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <span className="text-astrology-teal text-xl mt-1">✓</span>
-                  <span className="text-lg">Detailed analysis and personalized consultation</span>
+                  <span className="text-lg">{t('services.included1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-astrology-teal text-xl mt-1">✓</span>
-                  <span className="text-lg">Comprehensive written report with insights</span>
+                  <span className="text-lg">{t('services.included2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-astrology-teal text-xl mt-1">✓</span>
-                  <span className="text-lg">Follow-up support via email</span>
+                  <span className="text-lg">{t('services.included3')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-astrology-teal text-xl mt-1">✓</span>
-                  <span className="text-lg">Remedial measures and practical guidance</span>
+                  <span className="text-lg">{t('services.included4')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-astrology-teal text-xl mt-1">✓</span>
-                  <span className="text-lg">Confidential and professional service</span>
+                  <span className="text-lg">{t('services.included5')}</span>
                 </li>
               </ul>
             </CardContent>
@@ -120,10 +124,10 @@ const ServicePage = () => {
               onClick={handleBooking}
             >
               <Mail className="w-5 h-5 mr-2" />
-              Book This Service
+              {t('services.bookService')}
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/#contact">Contact Us</Link>
+              <Link to="/#contact">{t('services.contactUs')}</Link>
             </Button>
           </div>
         </div>
