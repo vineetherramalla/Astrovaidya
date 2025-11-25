@@ -29,13 +29,13 @@ const ServicesGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
           {services.map((service, index) => {
             const Icon = getIcon(service.icon);
             return (
               <Card
                 key={service.id}
-                className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-astrology-teal group animate-slide-up"
+                className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-astrology-teal group animate-slide-up flex flex-col h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => setSelectedService(service)}
                 role="button"
@@ -46,7 +46,7 @@ const ServicesGrid = () => {
                   }
                 }}
               >
-                <CardHeader>
+                <CardHeader className="flex-1">
                   <div className="flex items-start justify-between mb-2">
                     <div className="p-0 bg-transparent rounded-lg group-hover:bg-transparent transition-colors">
                         {service.image ? (
@@ -56,13 +56,7 @@ const ServicesGrid = () => {
                             <Icon className="w-8 h-8 text-astrology-teal" />
                           </div>
                         )}
-                      </div>
-                    {service.price && (
-                      <div className="flex items-center gap-1 text-astrology-orange font-bold">
-                        <IndianRupee className="w-4 h-4" />
-                        <span>{service.price.replace('₹', '')}</span>
-                      </div>
-                    )}
+                      </div>                    
                   </div>
                   <CardTitle className="text-xl group-hover:text-astrology-teal transition-colors">
                     {service.title}
@@ -72,14 +66,28 @@ const ServicesGrid = () => {
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent>
-                  {service.duration && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4" />
-                      <span>{service.duration}</span>
-                    </div>
-                  )}
+                <CardContent className="mt-auto">
+                  <div className="flex items-center justify-between">
+
+                    {/* LEFT → Duration */}
+                    {service.duration && (
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Clock className="w-4 h-4" />
+                        <span>{service.duration}</span>
+                      </div>
+                    )}
+
+                    {/* RIGHT → Price */}
+                    {service.price && (
+                      <div className="flex items-center gap-1 text-astrology-orange font-bold">
+                        <IndianRupee className="w-4 h-4" />
+                        <span>₹{service.price}</span>
+                      </div>
+                    )}
+
+                  </div>
                 </CardContent>
+
               </Card>
             );
           })}

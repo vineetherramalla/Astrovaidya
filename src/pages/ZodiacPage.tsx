@@ -46,10 +46,15 @@ const ZodiacPage = () => {
   };
 
   // Framer Motion variants for entrance
-  const photoVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: 'easeOut' } },
-  };
+    const photoVariants = {
+      hidden: { opacity: 0, y: 20, scale: 0.95 },
+      visible: { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        transition: { duration: 0.45 } 
+      },
+    };
 
   return (
     <div className="min-h-screen bg-background">

@@ -22,7 +22,7 @@ export const services: Service[] = [
     icon: 'Star',
     image: '/PersonalHoroscope.jpg',
     description: 'Get comprehensive insights into your life through detailed Vedic birth chart analysis. Understand your strengths, challenges, and destiny path.',
-    price: '₹2,500',
+    price: '2500',
     duration: '60 min',
   },
   {
@@ -33,7 +33,7 @@ export const services: Service[] = [
     icon: 'Heart',
     image: '/MarriageMatching.jpg',
     description: 'Traditional Kundali Milan service for marriage compatibility analysis. Comprehensive matching of Guna, Mangal Dosha, and planetary positions.',
-    price: '₹3,500',
+    price: '3500',
     duration: '90 min',
   },
   {
@@ -44,7 +44,7 @@ export const services: Service[] = [
     icon: 'Briefcase',
     image: 'Career.jpg',
     description: 'Discover your ideal career path based on planetary positions and dashas. Get timing for job changes and business ventures.',
-    price: '₹2,000',
+    price: '2000',
     duration: '45 min',
   },
   {
@@ -55,7 +55,7 @@ export const services: Service[] = [
     icon: 'Home',
     image: 'VastuConsultation.jpg',
     description: 'Expert Vastu Shastra consultation for homes and offices. Balance energies and create prosperity through proper spatial arrangement.',
-    price: '₹4,000',
+    price: '4000',
     duration: '90 min',
   },
   {
@@ -66,7 +66,7 @@ export const services: Service[] = [
     icon: 'Gem',
     image: 'Gemstone.jpg',
     description: 'Personalized gemstone recommendations based on your birth chart. Enhance positive energies and mitigate negative influences.',
-    price: '₹1,500',
+    price: '1500',
     duration: '30 min',
   },
   {
@@ -77,7 +77,7 @@ export const services: Service[] = [
     icon: 'Calendar',
     image: 'YearlyPrediction.jpg',
     description: 'Comprehensive yearly horoscope with monthly predictions. Plan your year with insights into health, wealth, and relationships.',
-    price: '₹5,000',
+    price: '5000',
     duration: '120 min',
   },
 ];

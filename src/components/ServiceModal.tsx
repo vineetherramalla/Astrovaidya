@@ -9,10 +9,11 @@ import {
 import { Button } from './ui/button';
 import { getIcon } from '@/utils/iconMap';
 import { useTranslation } from 'react-i18next';
-import { Clock, IndianRupee, Mail } from 'lucide-react';
+import { Clock, IndianRupee, Share2 } from 'lucide-react';
+import type { Service } from '@/data/services';
 
 interface ServiceModalProps {
-  service: any;
+  service: Service | null;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -25,20 +26,19 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
   const Icon = getIcon(service.icon);
 
   const handleBooking = () => {
-    const subject = encodeURIComponent(`Consultation Request: ${service.title}`);
-    const body = encodeURIComponent(
-      `Hello,\n\nI would like to book a consultation for "${service.title}".\n\nPlease let me know your availability.\n\nThank you.`
+    const message = encodeURIComponent(
+      `Hello, I would like to book a consultation for "${service.title}" (₹${service.price} | ${service.duration}). Please let me know your availability. Thank you.`
     );
-    window.location.href = `mailto:hello@cosmicinsights.com?subject=${subject}&body=${body}`;
+    window.open(`https://wa.me/919515615597?text=${message}`, '_blank');
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto sm:max-w-lg md:max-w-2xl">
         
         <DialogHeader>
-          <div className="flex items-start gap-4 mb-4">
-            <div className="flex-1">
+          <div className="flex items-start gap-4 mb-4 flex-col sm:flex-row">
+            <div className="flex-1 w-full">
               <DialogTitle className="text-2xl md:text-3xl mb-2">
                 {service.title}
               </DialogTitle>
@@ -51,9 +51,9 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
 
         <div className="p-0 bg-transparent rounded-lg">
               {service.image ? (
-                <img src={service.image} alt={service.title} className="w-86 h-66 rounded-md object-cover" />
+                <img src={service.image} alt={service.title} className="w-full max-w-md h-auto rounded-md object-cover mx-auto" />
               ) : (
-                <div className="p-4 bg-astrology-teal/10 rounded-lg">
+                <div className="p-4 bg-astrology-teal/10 rounded-lg flex justify-center">
                   <Icon className="w-10 h-10 text-astrology-teal" />
                 </div>
               )}
@@ -65,7 +65,7 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
             {service.price && (
               <div className="flex items-center gap-2 px-4 py-2 bg-astrology-orange/10 rounded-lg">
                 <IndianRupee className="w-4 h-4 text-astrology-orange" />
-                <span className="font-semibold text-astrology-orange">{service.price}</span>
+                <span className="font-semibold text-astrology-orange">₹{service.price}</span>
               </div>
             )}
             {service.duration && (
@@ -114,7 +114,7 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
               size="lg"
               onClick={handleBooking}
             >
-              <Mail className="w-4 h-4 mr-2" />
+              <Share2 className="w-4 h-4 mr-2" />
               {t('services.bookService')}
             </Button>
             <Button variant="outline" className = "bg-astrology-orange text-white hover:bg-astrology-orange/90"  size="lg" onClick={onClose}>

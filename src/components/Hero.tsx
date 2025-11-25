@@ -9,7 +9,7 @@ const Hero = () => {
   const { t } = useTranslation();
   
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-screen sm:min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
       
       {/* Background Image with Overlay */}
       <div 
