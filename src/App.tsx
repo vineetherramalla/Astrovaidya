@@ -10,7 +10,6 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
 import ZodiacPage from "./pages/ZodiacPage";
-import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import './i18n/config';
 import MarqueeServices from "./components/MarqueeServices";
@@ -32,7 +31,6 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServicePage />} />
               <Route path="/zodiac/:sign" element={<ZodiacPage />} />
-              <Route path="/admin" element={<Admin />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

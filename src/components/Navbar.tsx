@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: t('nav.horoscope'), path: '/#horoscope' },
     { name: t('nav.zodiac'), path: '/#zodiac' },
     { name: t('nav.contact'), path: '/#contact' },
-    { name: t('nav.admin'), path: '/admin' },
+    
   ];
 
   const isActive = (path: string) => {

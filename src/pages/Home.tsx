@@ -6,7 +6,6 @@ import About from '@/components/About';
 import ServicesGrid from '@/components/ServicesGrid';
 import Horoscopes from '@/components/Horoscopes';
 import ZodiacSigns from '@/components/ZodiacSigns';
-import UpdatesFeed from '@/components/UpdatesFeed';
 import ContactForm from '@/components/ContactForm';
 import FAQs from '@/components/FAQs';
 
@@ -27,7 +26,6 @@ const Home = () => {
       <div id="zodiac">
         <ZodiacSigns />
       </div>
-      <UpdatesFeed />
       <ContactForm />
       <FAQs />
     </main>
