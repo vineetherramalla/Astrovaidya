@@ -11,6 +11,8 @@ const ZodiacSigns = () => {
   return (
     <section className="py-16 px-4 bg-background">
       <div className="container mx-auto">
+
+        {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('zodiac.title')}
@@ -19,6 +21,8 @@ const ZodiacSigns = () => {
             {t('zodiac.subtitle')}
           </p>
         </div>
+
+        {/* Zodiac Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {zodiacSigns.map((sign) => (
             <Card
@@ -27,28 +31,39 @@ const ZodiacSigns = () => {
               onClick={() => navigate(`/zodiac/${sign.id}`)}
             >
               <CardHeader className="text-center">
+
+                {/* Image OR symbol */}
                 <div className="mb-2">
                   {sign.image ? (
-                    <img src={sign.image} alt={sign.name} className="w-20 h-20 mx-auto object-contain" />
+                    <img
+                      src={sign.image}
+                      alt={sign.name}
+                      className="w-30 h-30 mx-auto object-contain"
+                    />
                   ) : (
                     <div className="text-6xl">{sign.symbol}</div>
                   )}
                 </div>
+
                 <CardTitle className="text-lg">
                   {isTeluguMode ? sign.nameTe : sign.name}
                 </CardTitle>
+
                 <CardDescription className="text-sm">
                   {isTeluguMode ? sign.dateRangeTe : sign.dateRange}
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="text-center">
                 <p className="text-sm text-muted-foreground">
                   {isTeluguMode ? sign.elementTe : sign.element}
                 </p>
               </CardContent>
+
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );
