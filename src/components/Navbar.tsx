@@ -65,7 +65,10 @@ const Navbar = () => {
               size="sm"
               className="bg-astrology-teal hover:bg-astrology-deep-teal text-white"
             >
-              <a href="mailto:hello@cosmicinsights.com">{t('hero.cta')}</a>
+              <a href="https://wa.me/919515615597?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener noreferrer">
+                  {t('hero.cta')}
+                  
+              </a>
             </Button>
           </div>
 
