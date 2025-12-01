@@ -7,10 +7,11 @@ import { getIcon } from '@/utils/iconMap';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Clock, IndianRupee, Mail, ArrowLeft } from 'lucide-react';
+import { Clock, IndianRupee, ArrowLeft } from 'lucide-react';
 
 const ServicePage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isTeluguMode = i18n.language === 'te';
   const { slug } = useParams();
   const [service, setService] = useState<Service | null>(null);
 
@@ -37,11 +38,11 @@ const ServicePage = () => {
   const Icon = getIcon(service.icon);
 
   const handleBooking = () => {
-    const subject = encodeURIComponent(`Consultation Request: ${service.title}`);
-    const body = encodeURIComponent(
-      `Hello,\n\nI would like to book a consultation for "${service.title}".\n\nPlease let me know your availability.\n\nThank you.`
+    const name = isTeluguMode ? (service.titleTe || service.title) : service.title;
+    const message = encodeURIComponent(
+      `Hello, I would like to book a consultation for "${name}" (₹${service.price} | ${service.duration}). Please let me know your availability. Thank you.`
     );
-    window.location.href = `mailto:hello@cosmicinsights.com?subject=${subject}&body=${body}`;
+    window.open(`https://wa.me/919515615597?text=${message}`, '_blank');
   };
 
   return (
@@ -60,8 +61,8 @@ const ServicePage = () => {
               <Icon className="w-16 h-16 text-astrology-teal" />
             </div>
             <div className="flex-1">
-              <h1 className="text-3xl md:text-5xl font-bold mb-3">{service.title}</h1>
-              <p className="text-xl text-muted-foreground">{service.tagline}</p>
+              <h1 className="text-3xl md:text-5xl font-bold mb-3">{isTeluguMode ? (service.titleTe || service.title) : service.title}</h1>
+              <p className="text-xl text-muted-foreground">{isTeluguMode ? (service.taglineTe || service.tagline) : service.tagline}</p>
             </div>
           </div>
 
@@ -82,9 +83,9 @@ const ServicePage = () => {
 
           <Card className="mb-8">
             <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">{t('services.aboutService')}</h2>
+                <h2 className="text-2xl font-bold mb-4">{t('services.aboutService')}</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                {service.description || service.tagline}
+                {isTeluguMode ? (service.descriptionTe || service.description) : (service.description || service.tagline)}
               </p>
             </CardContent>
           </Card>
@@ -123,7 +124,6 @@ const ServicePage = () => {
               size="lg"
               onClick={handleBooking}
             >
-              <Mail className="w-5 h-5 mr-2" />
               {t('services.bookService')}
             </Button>
             <Button asChild variant="outline" size="lg">

@@ -9,7 +9,7 @@ import {
 import { Button } from './ui/button';
 import { getIcon } from '@/utils/iconMap';
 import { useTranslation } from 'react-i18next';
-import { Clock, IndianRupee, Share2 } from 'lucide-react';
+import { Clock} from 'lucide-react';
 import type { Service } from '@/data/services';
 
 interface ServiceModalProps {
@@ -19,7 +19,8 @@ interface ServiceModalProps {
 }
 
 const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isTeluguMode = i18n.language === 'te';
   
   if (!service) return null;
 
@@ -40,10 +41,10 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
           <div className="flex items-start gap-4 mb-4 flex-col sm:flex-row">
             <div className="flex-1 w-full">
               <DialogTitle className="text-2xl md:text-3xl mb-2">
-                {service.title}
+                {isTeluguMode ? (service.titleTe || service.title) : service.title}
               </DialogTitle>
               <DialogDescription className="text-base">
-                {service.tagline}
+                {isTeluguMode ? (service.taglineTe || service.tagline) : service.tagline}
               </DialogDescription>
             </div>
           </div>
@@ -64,7 +65,6 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
           <div className="flex flex-wrap gap-4 text-sm">
             {service.price && (
               <div className="flex items-center gap-2 px-4 py-2 bg-astrology-orange/10 rounded-lg">
-                <IndianRupee className="w-4 h-4 text-astrology-orange" />
                 <span className="font-semibold text-astrology-orange">₹{service.price}</span>
               </div>
             )}
@@ -80,7 +80,7 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
           {service.description && (
             <div>
               <h3 className="text-lg font-semibold mb-2">{t('services.aboutService')}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{isTeluguMode ? (service.descriptionTe || service.description) : service.description}</p>
             </div>
           )}
 
@@ -113,8 +113,7 @@ const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) => {
               className="bg-astrology-teal hover:bg-astrology-deep-teal text-white flex-1"
               size="lg"
               onClick={handleBooking}
-            >
-              <Share2 className="w-4 h-4 mr-2" />
+            >     
               {t('services.bookService')}
             </Button>
             <Button variant="outline" className = "bg-astrology-orange text-white hover:bg-astrology-orange/90"  size="lg" onClick={onClose}>

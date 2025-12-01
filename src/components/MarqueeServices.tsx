@@ -7,7 +7,8 @@ import { getIcon } from '@/utils/iconMap';
 import { useTranslation } from 'react-i18next';
 
 const MarqueeServices = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isTeluguMode = i18n.language === 'te';
   const [services, setServices] = useState<Service[]>([]);
 
   useEffect(() => {
@@ -43,12 +44,12 @@ const MarqueeServices = () => {
                     className="flex items-center gap-3 whitespace-nowrap"
                     tabIndex={0}
                     role="group"
-                    aria-label={`${service.title}: ${service.tagline}`}
+                    aria-label={`${isTeluguMode ? (service.titleTe || service.title) : service.title}: ${isTeluguMode ? (service.taglineTe || service.tagline) : service.tagline}`}
                   >
                     <Icon className="w-5 h-5 text-astrology-sand flex-shrink-0" />
                     <div className="flex items-baseline gap-2">
-                      <span className="font-semibold">{service.title}</span>
-                      <span className="text-sm text-astrology-sand/90">• {service.tagline}</span>
+                      <span className="font-semibold">{isTeluguMode ? (service.titleTe || service.title) : service.title}</span>
+                      <span className="text-sm text-astrology-sand/90">• {isTeluguMode ? (service.taglineTe || service.tagline) : service.tagline}</span>
                     </div>
                   </div>
                 );

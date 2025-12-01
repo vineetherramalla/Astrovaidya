@@ -6,10 +6,11 @@ import { getIcon } from '@/utils/iconMap';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import ServiceModal from './ServiceModal';
-import { Clock, IndianRupee } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 const ServicesGrid = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isTeluguMode = i18n.language === 'te';
   const [services, setServices] = useState<Service[]>([]);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
@@ -59,10 +60,10 @@ const ServicesGrid = () => {
                       </div>                    
                   </div>
                   <CardTitle className="text-xl group-hover:text-astrology-teal transition-colors">
-                    {service.title}
+                    {isTeluguMode ? (service.titleTe || service.title) : service.title}
                   </CardTitle>
                   <CardDescription className="text-sm">
-                    {service.tagline}
+                    {isTeluguMode ? (service.taglineTe || service.tagline) : service.tagline}
                   </CardDescription>
                 </CardHeader>
                 
@@ -80,7 +81,7 @@ const ServicesGrid = () => {
                     {/* RIGHT → Price */}
                     {service.price && (
                       <div className="flex items-center gap-1 text-astrology-orange font-bold">
-                        <IndianRupee className="w-4 h-4" />
+                        
                         <span>₹{service.price}</span>
                       </div>
                     )}

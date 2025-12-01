@@ -59,6 +59,18 @@
     "notFound": "Zodiac sign not found",
     "goBack": "Go Back"
   },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions about our services",
+    "q1": "How do I book a consultation?",
+    "a1": "Use the 'Book This Service' button on the service detail modal or contact us via WhatsApp or email to request an appointment.",
+    "q2": "What payment methods do you accept?",
+    "a2": "We accept bank transfers and UPI. Payment details will be shared after you request a booking.",
+    "q3": "Can I get a refund if I am not satisfied?",
+    "a3": "Refunds are evaluated on a case-by-case basis. Please contact us within 7 days of the consultation.",
+    "q4": "Do you offer remote consultations?",
+    "a4": "Yes — consultations are available via phone, WhatsApp, email, or video call."
+  },
   "updates": {
     "title": "Latest Updates",
     "subtitle": "Stay informed about special offers, workshops, and astrological events",
